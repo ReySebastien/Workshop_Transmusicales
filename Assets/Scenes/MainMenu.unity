@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1049747210}
         m_TargetAssemblyTypeName: ButtonMainMenu, Assembly-CSharp
-        m_MethodName: LoadHub
+        m_MethodName: LoadControlScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

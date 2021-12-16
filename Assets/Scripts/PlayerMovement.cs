@@ -61,6 +61,9 @@ public class PlayerMovement : MonoBehaviour
 
     private SpawnerManager spawnerManagerScript;
 
+    [SerializeField]
+    private Canvas pauseMenu;
+
     private bool gameStop;
 
     //private static PlayerMovement instance = null;
@@ -82,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        pauseMenu.enabled = false;
         spawnerManagerScript = GameObject.FindGameObjectWithTag("SpawnerManager").GetComponent<SpawnerManager>();
     }
 
@@ -96,12 +100,14 @@ public class PlayerMovement : MonoBehaviour
             if (gameStop)
             {
                 Time.timeScale = 1;
+                pauseMenu.enabled = false;
                 gameStop = false;
                 music.UnPause();
             }
 
             else
             {
+                pauseMenu.enabled = true;
                 Time.timeScale = 0;
                 gameStop = true;
                 music.Pause();
